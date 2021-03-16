@@ -1,3 +1,4 @@
 Pipfile*
 .vscode
 wyse/mods
+wyse/__pycache__
