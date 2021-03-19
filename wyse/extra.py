@@ -1,11 +1,15 @@
 import requests
 import time
+import sys
+
 
 def get_url(url, headers=None):
-    HEADERS = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-    }
-    r = requests.get(url, headers=HEADERS)
+    r = requests.get(url, headers=headers)
     r.raise_for_status()
 
     return r
+
+
+def loading_animation(animation, message, c):
+    print(f"\r{message} {animation[c % len(animation)]}", end="")
+    time.sleep(0.1)
